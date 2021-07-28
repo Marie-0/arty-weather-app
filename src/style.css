@@ -1,3 +1,42 @@
 h1 {
   color: #ff8200;
+  font-size: 18px;
+  margin-top: 10px;
+  text-align: center;
+}
+h2 {
+  margin: 5px 10%;
+}
+footer {
+  font-size: 12px;
+  text-align: center;
+  margin: 2%;
+}
+.container {
+  border: solid #ff8200 2px;
+  border-radius: 5px;
+  margin-top: 10px;
+  padding: 5px 30px;
+  max-height: 80%;
+  max-width: 80%;
+}
+.row {
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
+.btn {
+  font-size: 10px;
+  background-color: #ff8200;
+  border: #ff8200;
+}
+.card {
+  border: none;
+}
+.card-body {
+  border: solid #ff8200 1px;
+  border-radius: 4px;
+  font-size: 10px;
+  margin: 1px;
+  padding: 0;
+  text-align: center;
 }
