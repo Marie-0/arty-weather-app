@@ -14,11 +14,107 @@
     <title>Arty Weather App</title>
   </head>
   <body>
+    <h1>Arty Weather App</h1>
     <div class="container">
-      <h1>Arty Weather App</h1>
-      <a href="" class="btn btn-primary">Search</a>
-    </div>
+      <form id="search-form">
+          <div class="row"> <div class="col-1" id="searchemoji">🔎 </div>
+        <div class="col-8" id="searchemoji">
+            <input
+          type="search"
+          name="enter-city"
+          id="cityform"
+          placeholder="Enter a city"
+        /> 
+         </div>
+        <div class="col-3" id="searchbutton">
+            <a href="" class="btn btn-primary">Search</a></div>
+      </form>
+      <div class="row">
+          <div class="col-6" id="center-left">
+          <h2> <span class="current-city">Paris</span>  • <span class="current-temperture">25°C</span></h2>
+               <div class="row">
+                   <div class="col-2">
+                🌤
+               </div>  
+               <div class="col-9">
+                   <ul>
+                       <li class="current-date">July, 28 • 2021 </li>
+                       <li class="minimum-temp">18°C</li>
+                       <li class="maximum-temp">28°C</li>
+                       <li class="humidity">Humidity: <span class="humidity-percent">20%</span></li>
+                       <li class="wind">Wind speed: <span class="wind-speed">0km/h</span> </li>
+                   </ul>
+               </div>
+               </div>
+        </div>
+          <div class="col-6" id="center-right">
+            <div class="card card-artwork">
+              <img
+                src="img/william-turner.jpg"
+                class="card-img"
+                alt="William turner landscape"
+              />
+              <div class="card-body">
+                  William Turner, <i>Fishermen at Sea</i>, 1796, London, Tate Britain.
+              </div>
+          </div>
+          <br>
+        </div>
+        <hr/>
+        <div class="row forecast">
+            <div class="col">
+                <div class="forecast-preview">
+                    <div class="forecast-day">Tomorrow</div>
+                    <div class="forecast-emoji-day1">🌤</div>
+                    <div class="forecast-min-temperature">Min</div>
+                    <div class="forecast-max-temperature">Max</div>
+                </div>
+            </div>
 
+            <div class="col">
+                <div class="forecast-preview">
+                    <div class="forecast-day">Day 2</div>
+                    <div class="forecast-emoji-day2">🌦</div>
+                    <div class="forecast-min-temperature">Min</div>
+                    <div class="forecast-max-temperature">Max</div>
+                </div>
+             </div>   
+
+            <div class="col">
+                <div class="forecast-preview">
+                    <div class="forecast-day">Day 3</div>
+                    <div class="forecast-emoji-day3">🌧</div>
+                    <div class="forecast-min-temperature">Min</div>
+                    <div class="forecast-max-temperature">Max</div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="forecast-preview">
+                    <div class="forecast-day">Day 4</div>
+                    <div class="forecast-emoji-day4">⛈</div>
+                    <div class="forecast-min-temperature">Min</div>
+                    <div class="forecast-max-temperature">Max</div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="forecast-preview">
+                    <div class="forecast-day">Day 5</div>
+                    <div class="forecast-emoji-day5">🌩</div>
+                    <div class="forecast-min-temperature">Min</div>
+                    <div class="forecast-max-temperature">Max</div>
+                </div>
+            </div>
+            <br>
+        </div>
+        </div>
+      </div>
+    </div>
+    <br>
+    <small>
+        Coded by Marie-Odile, it is open-sourced on  <a href="https://github.com/Marie-0/arty-weather-app" target="_blank">GitHub</a> and hosted on <a href="https://www.netlify.com/" target="_blank">Netlify</a>
+    </small>
     <script src="src/app.js"></script>
   </body>
 </html>
