@@ -82,6 +82,13 @@ h1,
 h2 {
   font-size: 40px;
 }
+a {
+  color: #ff8200;
+}
+a:hover {
+  color: #ff8200;
+  font-weight: bold;
+}
 .row {
   margin-top: 4px;
   margin-bottom: 4px;
