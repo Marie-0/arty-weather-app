@@ -10,6 +10,9 @@
       integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
       crossorigin="anonymous"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+<link href="https://fonts.googleapis.com/css2?family=Oleo+Script&family=Spartan:wght@200&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="src/style.css" />
     <title>Arty Weather App</title>
   </head>
@@ -19,8 +22,8 @@
         <div class="row"> <div class="col-6">
       <form id="search-form">
           <div class="row"> 
-              <div class="col-1" id="searchemoji">🔎 </div>
-        <div class="col" id="searchemoji">
+              <div class="col-2" id="searchemoji">🔎 </div>
+        <div class="col-8">
             <input
           type="search"
           name="enter-city"
@@ -28,21 +31,21 @@
           placeholder="Enter a city"
         /> 
          </div>
-        <div class="col" id="searchbutton">
+        <div class="col-2" id="searchbutton">
             <a href="" class="btn btn-primary">Search</a></div>
       </form>
       </div>
       </div>
       <div class="row">
           <div class="col-7" id="center-left">
-          <h2> <span class="current-city">Paris</span>  • <span class="current-temperture">25°C</span></h2>
+          <h2> <span class="current-city">Paris</span>  • <span class="current-temperature">25°C</span></h2>
                <div class="row">
-                   <div class="col-2">🌤</div>  
-                   <div class="col-9">
+                   <div class="col-4 currentemoji">🌤</div>  
+                   <div class="col-8">
                    <ul>
                        <li class="current-date">July, 28 • 2021 </li>
-                       <li class="minimum-temp">18°C</li>
-                       <li class="maximum-temp">28°C</li>
+                       <li class="minimum-temp"> <span class="min-temp">18°C</span> minimum</li>
+                       <li class="maximum-temp"> <span class="max-temp">28°C</span> maximum</li>
                        <li class="humidity">Humidity: <span class="humidity-percent">20%</span></li>
                        <li class="wind">Wind speed: <span class="wind-speed">0km/h</span> </li>
                    </ul>

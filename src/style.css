@@ -1,36 +1,115 @@
+body {
+  font-family: "Spartan", sans-serif;
+  font-size: 12px;
+}
 h1 {
   color: #ff8200;
   font-size: 18px;
   margin-top: 10px;
   text-align: center;
 }
+input {
+  border: solid 2px hsl(31, 100%, 50%);
+  border-radius: 4px;
+  margin: 0 auto;
+  width: 100%;
+}
 h2 {
   margin: 5px 10%;
+  padding: 5%;
+}
+ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+hr {
+  color: #ff8200;
+  opacity: 100%;
+  border: solid 1px #ff8200;
+  margin-bottom: 2px;
 }
 footer {
   font-size: 12px;
   text-align: center;
   margin: 2%;
 }
+
 .container {
   border: solid #ff8200 2px;
   border-radius: 5px;
   margin-top: 10px;
   padding: 5px 30px;
-  max-height: 80%;
-  max-width: 80%;
+  min-width: 700px;
+  max-width: 70%;
+}
+
+h1,
+.forecast-day,
+.current-city {
+  font-family: "Oleo Script", cursive;
+}
+
+.col-8,
+.col-9,
+.forecast {
+  text-align: center;
+}
+
+.current-temperature,
+.maximum-temp,
+.minimum-temp {
+  font-size: smaller;
+}
+
+.min-temp,
+.max-temp {
+  font-weight: bold;
+  font-size: 12px;
+}
+
+.forecast-emoji-day1,
+.forecast-emoji-day2,
+.forecast-emoji-day3,
+.forecast-emoji-day4,
+.forecast-emoji-day5 {
+  font-size: 40px;
+}
+
+.forecast-min-temperature,
+.forecast-max-temperature {
+  font-size: 12px;
+}
+h2 {
+  font-size: 40px;
 }
 .row {
   margin-top: 4px;
   margin-bottom: 4px;
 }
 .btn {
-  font-size: 10px;
   background-color: #ff8200;
-  border: #ff8200;
+  border: solid 1px #ff8200;
+  box-shadow: 5px 5px 4px #eeeeee;
+  font-size: 10px;
+  margin-bottom: 0;
+  transition: all 200ms ease-in-out;
+}
+.btn:hover {
+  border: solid 1px #ff8200;
+  box-shadow: 5px 5px 4px #eeeeee;
+  background-color: #ffff;
+  color: #ff8200;
+  font-weight: bold;
+  margin-bottom: 0;
+}
+#searchemoji {
+  font-size: 20px;
+  text-align: right;
 }
 .card {
   border: none;
+  max-width: 80%;
+  margin: auto;
 }
 .card-body {
   border: solid #ff8200 1px;
@@ -39,4 +118,23 @@ footer {
   margin: 1px;
   padding: 0;
   text-align: center;
+}
+.currentemoji {
+  font-size: 50px;
+  text-align: center;
+}
+.current-temperature {
+  font-size: 20px;
+}
+.col-9 {
+  padding: 0px 30px;
+}
+.current-date {
+  color: #ff8200;
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.forecast-day {
+  font-size: 16px;
 }
