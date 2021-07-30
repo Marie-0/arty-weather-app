@@ -79,12 +79,13 @@ h1,
 .forecast {
   text-align: center;
 }
-
+.daypart,
 .current-temperature,
 .maximum-temp,
 .minimum-temp {
   font-family: "Spartan", sans-serif;
   font-size: smaller;
+  color: black;
 }
 
 .min-temp,

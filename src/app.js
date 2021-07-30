@@ -1,5 +1,5 @@
 let apiKey = "8f6b1ec5dcfe08b27439b846a9c1473d";
-let city = "Paris";
+let city = "Nice";
 let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 
 axios.get(`${apiUrl}`).then(showTemperature);
@@ -16,31 +16,32 @@ function showTemperature(response) {
   let humidityElement = document.querySelector(".humidity-percent");
   let windElement = document.querySelector(".wind-speed");
   let currentEmojiElement = document.querySelector(".currentemoji");
-  if (currentEmojiElement === "01d") {
+  let emojiElement = response.data.weather[0].icon;
+  if (emojiElement === "01d") {
     currentEmojiElement.innerHTML = "☀️";
   }
-  if (currentEmojiElement === "02d") {
+  if (emojiElement === "02d") {
     currentEmojiElement = "🌤";
   }
-  if (currentEmojiElement === "03d") {
+  if (emojiElement === "03d") {
     currentEmojiElement.innerHTML = "🌥";
   }
-  if (currentEmojiElement === "04d") {
+  if (emojiElement === "04d") {
     currentEmojiElement.innerHTML = " ☁️";
   }
-  if (currentEmojiElement === "09d") {
+  if (emojiElement === "09d") {
     currentEmojiElement.innerHTML = "🌧";
   }
-  if (currentEmojiElement === "10d") {
+  if (emojiElement === "10d") {
     currentEmojiElement.innerHTML = "🌦";
   }
-  if (currentEmojiElement === "11d") {
+  if (emojiElement === "11d") {
     currentEmojiElement.innerHTML = "🌩";
   }
-  if (currentEmojiElement === "13d") {
+  if (emojiElement === "13d") {
     currentEmojiElement.innerHTML = "❄️";
   }
-  if (currentEmojiElement === "50d") {
+  if (emojiElement === "50d") {
     currentEmojiElement.innerHTML = "🌫";
   }
 
@@ -60,8 +61,24 @@ let now = new Date();
 let currentdate = document.querySelector(".current-date");
 let date = now.getDate();
 let hour = now.getHours();
+let h1element = document.querySelector(".daypart");
 if (hour < 10) {
   hour = `0${hour}`;
+}
+if (hour < 12) {
+  h1element.innerHTML = "🌤 Good Morning 🌤";
+}
+if (hour < 6) {
+  h1element.innerHTML = "🌥 Hello Early bird  🌥";
+}
+if (hour >= 22) {
+  h1element.innerHTML = "🌚 Good Night 🌚";
+}
+if (hour < 22) {
+  h1element.innerHTML = "🌝 Good Evening 🌝";
+}
+if (hour < 18) {
+  h1element.innerHTML = "🌞 Good Afternoon 🌞";
 }
 let minutes = now.getMinutes();
 if (minutes < 10) {
