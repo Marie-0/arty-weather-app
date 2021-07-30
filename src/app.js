@@ -1,9 +1,19 @@
-let apiKey = "8f6b1ec5dcfe08b27439b846a9c1473d";
-let city = "Nice";
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+// Search Engine
+function search(city) {
+  let apiKey = "8f6b1ec5dcfe08b27439b846a9c1473d";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  axios.get(`${apiUrl}`).then(showTemperature);
+}
+function handlesubmit(event) {
+  event.preventDefault();
+  let cityformElement = document.querySelector("#cityform");
+  search(cityformElement.value);
+}
 
-axios.get(`${apiUrl}`).then(showTemperature);
-console.log(apiUrl);
+search("Paris");
+
+let form = document.querySelector("#search-form");
+form.addEventListener("submit", handlesubmit);
 
 // Display City weather info
 
