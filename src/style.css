@@ -152,16 +152,20 @@ a:hover {
   padding: 0;
   text-align: center;
 }
+
 .description {
   text-transform: capitalize;
 }
+
 .currentemoji {
   font-size: 50px;
   text-align: center;
 }
+
 .current-temperature {
   font-size: 20px;
 }
+
 .col-6 {
   padding-top: 5px;
 }

@@ -9,11 +9,34 @@ function handlesubmit(event) {
   let cityformElement = document.querySelector("#cityform");
   search(cityformElement.value);
 }
-
-search("Paris");
+let celsiusTemperature = null;
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handlesubmit);
+
+// Farenheit conversion
+function displayFarenheitConversion(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector(".current-temperature");
+  celsiusLink.classList.remove("active");
+  farenheitLink.classList.add("active");
+  let farenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
+  temperatureElement.innerHTML = "• " + Math.round(farenheitTemperature) + "°F";
+}
+
+function displayCelsiusBack(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector(".current-temperature");
+  temperatureElement.innerHTML = "• " + Math.round(celsiusTemperature) + "°C";
+}
+
+let farenheitLink = document.querySelector(".farenheit-link");
+farenheitLink.addEventListener("click", displayFarenheitConversion);
+
+let celsiusLink = document.querySelector(".celsius-link");
+celsiusLink.addEventListener("click", displayCelsiusBack);
+
+search("Paris");
 
 // Display City weather info
 
@@ -26,6 +49,9 @@ function showTemperature(response) {
   let humidityElement = document.querySelector(".humidity-percent");
   let windElement = document.querySelector(".wind-speed");
   let currentEmojiElement = document.querySelector(".currentemoji");
+
+  celsiusTemperature = response.data.main.temp;
+
   let emojiElement = response.data.weather[0].icon;
   if (emojiElement === "01d") {
     currentEmojiElement.innerHTML = "☀️";
@@ -55,7 +81,7 @@ function showTemperature(response) {
     currentEmojiElement.innerHTML = "🌫";
   }
 
-  let parisTemperature = Math.round(response.data.main.temp);
+  let parisTemperature = Math.round(celsiusTemperature);
   temperatureElement.innerHTML = `• ${parisTemperature}°C`;
   cityElement.innerHTML = response.data.name;
   descriptionElement.innerHTML = response.data.weather[0].description;
