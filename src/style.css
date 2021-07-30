@@ -1,5 +1,4 @@
 body {
-  background-image: url("img/frame-30.png");
   font-family: "Spartan", sans-serif;
   font-size: 12px;
 }
@@ -35,6 +34,12 @@ footer {
   margin: 2%;
 }
 
+.container-frame {
+  padding: 5% 10%;
+  background-image: url("../img/framing.png");
+  background-repeat: no-repeat;
+  background-position: center;
+}
 .container {
   border: solid #ff8200 2px;
   border-radius: 5px;
