@@ -8,10 +8,18 @@ function showTemperature(response) {
   let temperatureElement = document.querySelector(".current-temperature");
   let cityElement = document.querySelector(".current-city");
   let descriptionElement = document.querySelector(".description");
+  let minimumTemperature = document.querySelector(".min-temp");
+  let maximumTemperature = document.querySelector(".max-temp");
+  let humidityElement = document.querySelector(".humidity-percent");
+  let windElement = document.querySelector(".wind-speed");
   let parisTemperature = Math.round(response.data.main.temp);
   temperatureElement.innerHTML = `• ${parisTemperature}°C`;
   cityElement.innerHTML = response.data.name;
   descriptionElement.innerHTML = response.data.weather[0].description;
+  minimumTemperature.innerHTML = Math.round(response.data.main.temp_min) + "°C";
+  maximumTemperature.innerHTML = Math.round(response.data.main.temp_max) + "°C";
+  humidityElement.innerHTML = response.data.main.humidity + "%";
+  windElement.innerHTML = Math.round(response.data.wind.speed) + " km/h";
 }
 
 // Current date and time
