@@ -1,12 +1,17 @@
 body {
+  background-color: transparent;
   font-family: "Spartan", sans-serif;
-  font-size: 12px;
+  font-size: 10px;
+  padding-top: none;
+  margin: none;
 }
 h1 {
+  background-color: none;
   color: #ff8200;
   font-size: 18px;
-  margin-top: 10px;
-  text-align: center;
+  margin-top: 5px;
+  margin-bottom: none;
+  text-align: right;
 }
 input {
   border: solid 2px hsl(31, 100%, 50%);
@@ -16,8 +21,8 @@ input {
 }
 h2 {
   margin: 5px 10%;
-  padding: 5%;
-  font-size: 40px;
+  padding: 0;
+  font-size: 30px;
 }
 ul {
   list-style-type: none;
@@ -30,24 +35,36 @@ hr {
   margin-bottom: 2px;
 }
 footer {
+  background-color: transparent;
+  max-block-size: 30px;
   font-size: 12px;
+  margin: 0;
+  text-decoration: none;
   text-align: center;
-  margin: 2%;
 }
 
 .container-frame {
   padding: 5% 10%;
-  background-image: url("../img/framing.png");
+  background-image: url(../img/framing.png);
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: top center;
+  background-size: 70%;
+  background-attachment: fixed;
+  background-size: 814px 492px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .container {
-  border: solid #ff8200 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border-radius: 5px;
-  margin-top: 10px;
-  padding: 5px 30px;
-  min-width: 700px;
-  max-width: 70%;
+  margin-top: 0;
+  padding-top: 0;
+  max-width: 675px;
+  min-width: 675px;
+  min-height: 379px;
 }
 
 h1,
@@ -86,7 +103,7 @@ h1,
 
 .forecast-min-temperature,
 .forecast-max-temperature {
-  font-size: 12px;
+  font-size: 10px;
 }
 
 a {
@@ -123,12 +140,13 @@ a:hover {
 .card {
   border: none;
   max-width: 80%;
-  margin: auto;
+  margin-left: 20%;
+  padding-left: 0;
 }
 .card-body {
   border: solid #ff8200 1px;
   border-radius: 4px;
-  font-size: 10px;
+  font-size: 8px;
   margin: 1px;
   padding: 0;
   text-align: center;
@@ -143,12 +161,15 @@ a:hover {
 .current-temperature {
   font-size: 20px;
 }
+.col-6 {
+  padding-top: 5px;
+}
 .col-9 {
   padding: 0px 30px;
 }
 .current-date {
   color: #ff8200;
-  font-size: 16px;
+  font-size: 12px;
   font-weight: bold;
   margin-bottom: 10px;
 }
