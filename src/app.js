@@ -38,6 +38,10 @@ celsiusLink.addEventListener("click", displayCelsiusBack);
 
 search("Paris");
 
+function getForecast(coordinates) {
+  console.log(coordinates);
+}
+
 // Display City weather info
 
 function showTemperature(response) {
@@ -89,6 +93,8 @@ function showTemperature(response) {
   maximumTemperature.innerHTML = Math.round(response.data.main.temp_max) + "°C";
   humidityElement.innerHTML = response.data.main.humidity + "%";
   windElement.innerHTML = Math.round(response.data.wind.speed) + " km/h";
+
+  getForecast(response.data.coord);
 }
 
 // Current date and time
@@ -148,3 +154,25 @@ let months = [
 ];
 let month = months[now.getMonth()];
 currentdate.innerHTML = `${month},  ${date} • ${hour}:${minutes}`;
+
+// Forecast Javascript
+function displayForecast(day) {
+  let forecastElement = document.querySelector("#forecast");
+  let forecastHTML = `<div class="row">`;
+  let days = ["Tomorrow", "Tuesday", "Wednesday", "Thursday", "Friday"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `<div class="col">
+                <div class="forecast-preview">
+                    <div class="forecast-day">${day}</div>
+                    <div class="forecast-emoji-day1">🌤</div>
+                    <div class="forecast-min-temperature">Min</div>
+                    <div class="forecast-max-temperature">Max</div>
+                </div>
+            </div>`;
+  });
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+displayForecast();
