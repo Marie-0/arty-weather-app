@@ -159,19 +159,48 @@ currentdate.innerHTML = `${month},  ${date} • ${hour}:${minutes}`;
 
 // Forecast Javascript
 function displayForecast(response) {
-  console.log(response.data.daily);
+  let forecast = response.data.daily;
+
   let forecastElement = document.querySelector("#forecast");
   let forecastHTML = `<div class="row">`;
-  let days = ["Tomorrow", "Tuesday", "Wednesday", "Thursday", "Friday"];
-  days.forEach(function (day) {
+  forecast.forEach(function (forecastDay) {
+    let currentEmojiElement = document.querySelector(".forecast-emoji");
+    let emojiElement = forecastDay.weather[0].icon;
+    if (emojiElement === "01d") {
+      currentEmojiElement.innerHTML = "☀️";
+    }
+    if (emojiElement === "02d") {
+      currentEmojiElement = "🌤";
+    }
+    if (emojiElement === "03d") {
+      currentEmojiElement.innerHTML = "🌥";
+    }
+    if (emojiElement === "04d") {
+      currentEmojiElement.innerHTML = " ☁️";
+    }
+    if (emojiElement === "09d") {
+      currentEmojiElement.innerHTML = "🌧";
+    }
+    if (emojiElement === "10d") {
+      currentEmojiElement.innerHTML = "🌦";
+    }
+    if (emojiElement === "11d") {
+      currentEmojiElement.innerHTML = "🌩";
+    }
+    if (emojiElement === "13d") {
+      currentEmojiElement.innerHTML = "❄️";
+    }
+    if (emojiElement === "50d") {
+      currentEmojiElement.innerHTML = "🌫";
+    }
     forecastHTML =
       forecastHTML +
       `<div class="col">
                 <div class="forecast-preview">
-                    <div class="forecast-day">${day}</div>
-                    <div class="forecast-emoji-day1">🌤</div>
-                    <div class="forecast-min-temperature">Min</div>
-                    <div class="forecast-max-temperature">Max</div>
+                    <div class="forecast-day">${forecastDay.dt}</div>
+                    <div class="forecast-emoji">${emojiElement}</div>
+                    <div class="forecast-min-temperature">${forecastDay.temp.min} ° min</div>
+                    <div class="forecast-max-temperature">${forecastDay.temp.min} ° max</div>
                 </div>
             </div>`;
   });
