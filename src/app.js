@@ -39,7 +39,9 @@ celsiusLink.addEventListener("click", displayCelsiusBack);
 search("Paris");
 
 function getForecast(coordinates) {
-  console.log(coordinates);
+  let apiKey = "8f6b1ec5dcfe08b27439b846a9c1473d";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayForecast);
 }
 
 // Display City weather info
@@ -156,7 +158,8 @@ let month = months[now.getMonth()];
 currentdate.innerHTML = `${month},  ${date} • ${hour}:${minutes}`;
 
 // Forecast Javascript
-function displayForecast(day) {
+function displayForecast(response) {
+  console.log(response.data.daily);
   let forecastElement = document.querySelector("#forecast");
   let forecastHTML = `<div class="row">`;
   let days = ["Tomorrow", "Tuesday", "Wednesday", "Thursday", "Friday"];
@@ -175,4 +178,3 @@ function displayForecast(day) {
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
 }
-displayForecast();
