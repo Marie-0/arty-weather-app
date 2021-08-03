@@ -9,7 +9,6 @@ function handlesubmit(event) {
   let cityformElement = document.querySelector("#cityform");
   search(cityformElement.value);
 }
-let celsiusTemperature = null;
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handlesubmit);
@@ -41,7 +40,7 @@ function showTemperature(response) {
     currentEmojiElement.innerHTML = "☀️";
   }
   if (emojiElement === "02d") {
-    currentEmojiElement = "🌤";
+    currentEmojiElement.innerHTML = "🌤";
   }
   if (emojiElement === "03d") {
     currentEmojiElement.innerHTML = "🌥";
@@ -157,7 +156,7 @@ function displayForecast(response) {
   let forecastElement = document.querySelector("#forecast");
   let forecastHTML = `<div class="row">`;
   forecast.forEach(function (forecastDay, index) {
-    if (index < 5) {
+    if (index > 0 && index < 6) {
       let currentEmojiElement = document.querySelector(".forecast-emoji");
       let emojiElement = forecastDay.weather[0].icon;
       if (emojiElement === "01d") {
