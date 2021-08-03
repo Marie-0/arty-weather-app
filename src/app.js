@@ -167,40 +167,44 @@ function displayForecast(response) {
     let currentEmojiElement = document.querySelector(".forecast-emoji");
     let emojiElement = forecastDay.weather[0].icon;
     if (emojiElement === "01d") {
-      currentEmojiElement.innerHTML = "☀️";
+      currentEmojiElement = "☀️";
     }
     if (emojiElement === "02d") {
       currentEmojiElement = "🌤";
     }
     if (emojiElement === "03d") {
-      currentEmojiElement.innerHTML = "🌥";
+      currentEmojiElement = "🌥";
     }
     if (emojiElement === "04d") {
-      currentEmojiElement.innerHTML = " ☁️";
+      currentEmojiElement = " ☁️";
     }
     if (emojiElement === "09d") {
-      currentEmojiElement.innerHTML = "🌧";
+      currentEmojiElement = "🌧";
     }
     if (emojiElement === "10d") {
-      currentEmojiElement.innerHTML = "🌦";
+      currentEmojiElement = "🌦";
     }
     if (emojiElement === "11d") {
-      currentEmojiElement.innerHTML = "🌩";
+      currentEmojiElement = "🌩";
     }
     if (emojiElement === "13d") {
-      currentEmojiElement.innerHTML = "❄️";
+      currentEmojiElement = "❄️";
     }
     if (emojiElement === "50d") {
-      currentEmojiElement.innerHTML = "🌫";
+      currentEmojiElement = "🌫";
     }
     forecastHTML =
       forecastHTML +
       `<div class="col">
                 <div class="forecast-preview">
                     <div class="forecast-day">${forecastDay.dt}</div>
-                    <div class="forecast-emoji">${emojiElement}</div>
-                    <div class="forecast-min-temperature">${forecastDay.temp.min} ° min</div>
-                    <div class="forecast-max-temperature">${forecastDay.temp.min} ° max</div>
+                    <div class="forecast-emoji">${currentEmojiElement}</div>
+                    <div class="forecast-min-temperature">${Math.round(
+                      forecastDay.temp.min
+                    )} ° min</div>
+                    <div class="forecast-max-temperature">${Math.round(
+                      forecastDay.temp.max
+                    )} ° max</div>
                 </div>
             </div>`;
   });
