@@ -157,57 +157,73 @@ let months = [
 let month = months[now.getMonth()];
 currentdate.innerHTML = `${month},  ${date} • ${hour}:${minutes}`;
 
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  return days[day];
+}
+
 // Forecast Javascript
 function displayForecast(response) {
   let forecast = response.data.daily;
 
   let forecastElement = document.querySelector("#forecast");
   let forecastHTML = `<div class="row">`;
-  forecast.forEach(function (forecastDay) {
-    let currentEmojiElement = document.querySelector(".forecast-emoji");
-    let emojiElement = forecastDay.weather[0].icon;
-    if (emojiElement === "01d") {
-      currentEmojiElement = "☀️";
-    }
-    if (emojiElement === "02d") {
-      currentEmojiElement = "🌤";
-    }
-    if (emojiElement === "03d") {
-      currentEmojiElement = "🌥";
-    }
-    if (emojiElement === "04d") {
-      currentEmojiElement = " ☁️";
-    }
-    if (emojiElement === "09d") {
-      currentEmojiElement = "🌧";
-    }
-    if (emojiElement === "10d") {
-      currentEmojiElement = "🌦";
-    }
-    if (emojiElement === "11d") {
-      currentEmojiElement = "🌩";
-    }
-    if (emojiElement === "13d") {
-      currentEmojiElement = "❄️";
-    }
-    if (emojiElement === "50d") {
-      currentEmojiElement = "🌫";
-    }
-    forecastHTML =
-      forecastHTML +
-      `<div class="col">
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 5) {
+      let currentEmojiElement = document.querySelector(".forecast-emoji");
+      let emojiElement = forecastDay.weather[0].icon;
+      if (emojiElement === "01d") {
+        currentEmojiElement = "☀️";
+      }
+      if (emojiElement === "02d") {
+        currentEmojiElement = "🌤";
+      }
+      if (emojiElement === "03d") {
+        currentEmojiElement = "🌥";
+      }
+      if (emojiElement === "04d") {
+        currentEmojiElement = " ☁️";
+      }
+      if (emojiElement === "09d") {
+        currentEmojiElement = "🌧";
+      }
+      if (emojiElement === "10d") {
+        currentEmojiElement = "🌦";
+      }
+      if (emojiElement === "11d") {
+        currentEmojiElement = "🌩";
+      }
+      if (emojiElement === "13d") {
+        currentEmojiElement = "❄️";
+      }
+      if (emojiElement === "50d") {
+        currentEmojiElement = "🌫";
+      }
+      forecastHTML =
+        forecastHTML +
+        `<div class="col">
                 <div class="forecast-preview">
-                    <div class="forecast-day">${forecastDay.dt}</div>
+                    <div class="forecast-day">${formatDay(forecastDay.dt)}</div>
                     <div class="forecast-emoji">${currentEmojiElement}</div>
                     <div class="forecast-min-temperature">${Math.round(
                       forecastDay.temp.min
-                    )} ° min</div>
+                    )} ° C min</div>
                     <div class="forecast-max-temperature">${Math.round(
                       forecastDay.temp.max
-                    )} ° max</div>
-                </div>
-            </div>`;
+                    )} ° C max</div>
+                </div>`;
+    }
+    forecastHTML = forecastHTML + `</div>`;
+    forecastElement.innerHTML = forecastHTML;
   });
-  forecastHTML = forecastHTML + `</div>`;
-  forecastElement.innerHTML = forecastHTML;
 }
