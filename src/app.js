@@ -14,28 +14,6 @@ let celsiusTemperature = null;
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handlesubmit);
 
-// Farenheit conversion
-function displayFarenheitConversion(event) {
-  event.preventDefault();
-  let temperatureElement = document.querySelector(".current-temperature");
-  celsiusLink.classList.remove("active");
-  farenheitLink.classList.add("active");
-  let farenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
-  temperatureElement.innerHTML = "• " + Math.round(farenheitTemperature) + "°F";
-}
-
-function displayCelsiusBack(event) {
-  event.preventDefault();
-  let temperatureElement = document.querySelector(".current-temperature");
-  temperatureElement.innerHTML = "• " + Math.round(celsiusTemperature) + "°C";
-}
-
-let farenheitLink = document.querySelector(".farenheit-link");
-farenheitLink.addEventListener("click", displayFarenheitConversion);
-
-let celsiusLink = document.querySelector(".celsius-link");
-celsiusLink.addEventListener("click", displayCelsiusBack);
-
 search("Paris");
 
 function getForecast(coordinates) {

@@ -113,6 +113,7 @@ a:hover {
 .row {
   margin-top: 4px;
   margin-bottom: 4px;
+  text-align: center;
 }
 .btn {
   background-color: #ff8200;
@@ -133,6 +134,9 @@ a:hover {
 #searchemoji {
   font-size: 20px;
   text-align: right;
+}
+.daypart {
+  font-size: 12px;
 }
 .card {
   border: none;
