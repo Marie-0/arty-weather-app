@@ -2,7 +2,7 @@ body {
   background-color: transparent;
   font-family: "Spartan", sans-serif;
   font-size: 10px;
-  padding-top: none;
+  padding-top: 10px;
   margin: none;
 }
 h1 {
@@ -34,37 +34,29 @@ hr {
   border: solid 1px #ff8200;
   margin-bottom: 2px;
 }
-footer {
-  background-color: transparent;
-  max-block-size: 30px;
-  font-size: 12px;
-  margin: 0;
-  text-decoration: none;
-  text-align: center;
-}
 
 .container-frame {
-  padding: 5% 10%;
+  align-items: center;
   background-image: url(../img/framing.png);
   background-repeat: no-repeat;
-  background-position: top center;
-  background-size: 70%;
+  background-position: center;
   background-attachment: fixed;
-  background-size: 814px 492px;
-  display: flex;
-  align-items: center;
+  min-width: 875px;
+  min-height: 875px;
+  background-size: 60%;
+  display: block;
   justify-content: center;
+  padding: 5% 10%;
 }
 .container {
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 5px;
   margin-top: 0;
-  padding-top: 0;
+  padding-top: 5px;
   max-width: 675px;
   min-width: 675px;
-  min-height: 379px;
+  min-height: 300px;
 }
 
 h1,
@@ -79,6 +71,7 @@ h1,
 .forecast {
   text-align: center;
 }
+
 .daypart,
 .current-temperature,
 .maximum-temp,
@@ -171,6 +164,7 @@ a:hover {
 .col-6 {
   padding-top: 5px;
 }
+
 .col-9 {
   padding: 0px 30px;
 }
@@ -182,4 +176,8 @@ a:hover {
 }
 .forecast-day {
   font-size: 16px;
+}
+.footer {
+  display: block;
+  background-color: transparent;
 }
