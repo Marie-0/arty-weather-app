@@ -204,3 +204,17 @@ function displayForecast(response) {
     forecastElement.innerHTML = forecastHTML;
   });
 }
+
+// Image according to  Weather
+function changeArt() {
+  let img = document.querySelector("#artwork");
+  let imgSource = img.setAttribute("src", "img/william-turner.jpg");
+  let emojiElement = document.querySelector("#emoji");
+  let textElement = document.querySelector("#cartel");
+  if (emojiElement === "☀️") {
+    imgSource = img.setAttribute("src", "img/tarsila-doamaral.jpg");
+    textElement.innerHTML =
+      "Tarsila do Amaral, Abaporu, 1928 © Tarsila do Amaral";
+  }
+}
+changeArt();
