@@ -118,10 +118,12 @@ a:hover {
 .btn {
   background-color: #ff8200;
   border: solid 1px #ff8200;
+  border-radius: 5px;
   box-shadow: 5px 5px 4px #eeeeee;
   font-size: 10px;
   margin-bottom: 0;
   transition: all 200ms ease-in-out;
+  text-align: center;
 }
 .btn:hover {
   border: solid 1px #ff8200;
