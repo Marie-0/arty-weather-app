@@ -106,22 +106,19 @@ let currentdate = document.querySelector(".current-date");
 let date = now.getDate();
 let hour = now.getHours();
 let h1element = document.querySelector(".daypart");
-if (hour < 10) {
-  hour = `0${hour}`;
-}
-if (hour < 12) {
+if (hour < 12 && hour > 7) {
   h1element.innerHTML = "🌤 Good Morning 🌤";
 }
-if (hour < 6) {
+if (hour < 7 && hour > 4) {
   h1element.innerHTML = "🌥 Hello Early bird  🌥";
 }
-if (hour >= 22) {
+if (hour >= 22 && hour < 4) {
   h1element.innerHTML = "🌚 Good Night 🌚";
 }
-if (hour < 22) {
+if (hour < 22 && hour > 18) {
   h1element.innerHTML = "🌝 Good Evening 🌝";
 }
-if (hour < 18) {
+if (hour < 18 && hour > 12) {
   h1element.innerHTML = "🌞 Good Afternoon 🌞";
 }
 let minutes = now.getMinutes();

@@ -37,14 +37,11 @@ hr {
 
 .container-frame {
   align-items: center;
-  background-image: url(../img/framing.png);
+  background-image: url(../img/frame.png);
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
-  min-width: 875px;
-  min-height: 875px;
-  background-size: 60%;
-  display: block;
+  background-size: cover;
   justify-content: center;
   padding: 5% 10%;
 }
@@ -79,6 +76,8 @@ h1,
   font-family: "Spartan", sans-serif;
   font-size: smaller;
   color: black;
+  margin-top: 3px;
+  margin-bottom: 3px;
 }
 
 .min-temp,
