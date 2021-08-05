@@ -10,127 +10,106 @@
       integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
       crossorigin="anonymous"
     />
-    <link rel="preconnect" href="https://fonts.googleapis.com"> 
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
-<link href="https://fonts.googleapis.com/css2?family=Oleo+Script&family=Spartan:wght@200&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oleo+Script&family=Spartan:wght@200&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="src/style.css" />
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <title>Arty Weather App</title>
   </head>
+  <div class="footer text-center">
+    <small>
+      Coded by Marie-Odile, it is open-sourced on
+      <a href="https://github.com/Marie-0/arty-weather-app" target="_blank"
+        >GitHub</a
+      >
+      and hosted on
+      <a href="https://www.netlify.com/" target="_blank">Netlify</a>
+    </small>
+  </div>
   <body>
-    <div class="container-frame">
     <div class="container">
-        <div class="row"> 
-      <div class="col-6">
-      <form id="search-form">
-          <div class="row"> 
-              <div class="col-2" id="searchemoji">🔎 </div>
-        <div class="col-8">
-            <input
-          type="search"
-          name="enter-city"
-          id="cityform"
-          autocomplete="off"
-          placeholder="Enter a city"
-        /> 
-         </div>
-        <div class="col-2" id="searchbutton">
-            <a href="" class="btn btn-primary">Search</a></div>
-      </form>
-      </div>
-      </div>
-      <h1 class="col-5">Arty Weather App <div class="daypart">•</div></h1>
-      <div class="row">
-          <div class="col-7" id="center-left">
-          <h2><span class="current-city"> Paris </span> <span class="current-temperature">• 25°C</span> </h2>
-               <div class="row">
-                   <div class="col-4">  <div class="description">Sunny</div><div class="currentemoji">🌤</div> </div>  
-                   <div class="col-8">
-                   <ul>
-                       <li class="current-date">July, 28 • 2021 </li>
-                       <li class="minimum-temp"> <span class="min-temp">18°C</span> minimum</li>
-                       <li class="maximum-temp"> <span class="max-temp">28°C</span> maximum</li>
-                       <li class="humidity">Humidity: <span class="humidity-percent">20%</span></li>
-                       <li class="wind">Wind speed: <span class="wind-speed">0km/h</span> </li>
-                       <li class="units">See in <a href="#" class="farenheit-link">Farenheit</a> °F</li>
-                       <li class="units">Back to <a href="#" class="celsius-link">Celsius</a> °C</li>
-                   </ul>
-               </div>
-               </div>
+      <div class="container-frame">
+        <div class="row">
+          <div class="col-6">
+            <form id="search-form">
+              <div class="row">
+                <div class="col-2" id="searchemoji">🔎</div>
+                <div class="col-8">
+                  <input
+                    type="search"
+                    name="enter-city"
+                    id="cityform"
+                    autocomplete="off"
+                    placeholder="Enter a city"
+                  />
+                </div>
+                <div class="col-2" id="searchbutton">
+                  <button type="submit" class="btn btn-primary">Search</button>
+                </div>
+              </div>
+            </form>
+          </div>
         </div>
+        <h1 class="col-5">
+          Arty Weather App
+          <div class="daypart">•</div>
+        </h1>
+        <div class="row">
+          <div class="col-7" id="center-left">
+            <br /><br />
+            <h2>
+              <span class="current-city"> Paris </span>
+              <span class="current-temperature">• 25°C</span>
+            </h2>
+            <br />
+            <div class="row">
+              <div class="col-4">
+                <div class="description">Sunny</div>
+                <div class="currentemoji" id="emoji">🌤</div>
+              </div>
+              <div class="col-8">
+                <ul>
+                  <li class="current-date">July, 28 • 2021</li>
+                  <li class="minimum-temp">
+                    <span class="min-temp">18°C</span> minimum
+                  </li>
+                  <li class="maximum-temp">
+                    <span class="max-temp">28°C</span> maximum
+                  </li>
+                  <li class="humidity">
+                    Humidity: <span class="humidity-percent">20%</span>
+                  </li>
+                  <li class="wind">
+                    Wind speed: <span class="wind-speed">0km/h</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
           <div class="col-5" id="center-right">
             <div class="card card-artwork">
               <img
                 src="img/william-turner.jpg"
                 class="card-img-top"
+                id="artwork"
                 alt="William turner landscape"
               />
-              <div class="card-body">
-                  William Turner, <i>Fishermen at Sea</i>, 1796, London, Tate Britain.
+              <div class="card-body" id="cartel">
+                William Turner, <i>Fishermen at Sea</i>, 1796, London, Tate
+                Britain.
               </div>
+            </div>
+            <br />
           </div>
-          <br>
-        </div>
-        <hr/>
-        <div class="row forecast">
-            <div class="col">
-                <div class="forecast-preview">
-                    <div class="forecast-day">Tomorrow</div>
-                    <div class="forecast-emoji-day1">🌤</div>
-                    <div class="forecast-min-temperature">Min</div>
-                    <div class="forecast-max-temperature">Max</div>
-                </div>
-            </div>
-
-            <div class="col">
-                <div class="forecast-preview">
-                    <div class="forecast-day">Day 2</div>
-                    <div class="forecast-emoji-day2">🌦</div>
-                    <div class="forecast-min-temperature">Min</div>
-                    <div class="forecast-max-temperature">Max</div>
-                </div>
-             </div>   
-
-            <div class="col">
-                <div class="forecast-preview">
-                    <div class="forecast-day">Day 3</div>
-                    <div class="forecast-emoji-day3">🌧</div>
-                    <div class="forecast-min-temperature">Min</div>
-                    <div class="forecast-max-temperature">Max</div>
-                </div>
-            </div>
-
-            <div class="col">
-                <div class="forecast-preview">
-                    <div class="forecast-day">Day 4</div>
-                    <div class="forecast-emoji-day4">⛈</div>
-                    <div class="forecast-min-temperature">Min</div>
-                    <div class="forecast-max-temperature">Max</div>
-                </div>
-            </div>
-
-            <div class="col">
-                <div class="forecast-preview">
-                    <div class="forecast-day">Day 5</div>
-                    <div class="forecast-emoji-day5">🌩</div>
-                    <div class="forecast-min-temperature">Min</div>
-                    <div class="forecast-max-temperature">Max</div>
-                </div>
-            </div>
-            <br>
-        </div>
+          <hr />
+          <div class="row" id="forecast"></div>
         </div>
       </div>
     </div>
-    </div>
-      <br>
-      <br>
-      <br>
-    <footer>
-    <small>
-        Coded by Marie-Odile, it is open-sourced on  <a href="https://github.com/Marie-0/arty-weather-app" target="_blank">GitHub</a> and hosted on <a href="https://www.netlify.com/" target="_blank">Netlify</a>
-    </small>
-    </footer>
     <script src="src/app.js"></script>
   </body>
 </html>
