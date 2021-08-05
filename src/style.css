@@ -41,11 +41,9 @@ hr {
   background-image: url(../img/framing.png);
   background-repeat: no-repeat;
   background-position: center;
-  background-attachment: fixed;
   background-size: 100%;
   justify-content: center;
-  margin-top: 30px;
-  size: cover;
+  padding: 50px 75px;
 }
 .container {
   align-items: center;
