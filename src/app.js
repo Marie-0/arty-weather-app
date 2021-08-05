@@ -31,7 +31,7 @@ function showTemperature(response) {
   let maximumTemperature = document.querySelector(".max-temp");
   let humidityElement = document.querySelector(".humidity-percent");
   let windElement = document.querySelector(".wind-speed");
-  let currentEmojiElement = document.querySelector(".currentemoji");
+  let currentEmoji = document.querySelector(".currentemoji");
   let img = document.querySelector("#artwork");
   let textElement = document.querySelector("#cartel");
 
@@ -39,50 +39,50 @@ function showTemperature(response) {
 
   let emojiElement = response.data.weather[0].icon;
   if (emojiElement === "01d") {
-    currentEmojiElement.innerHTML = "☀️";
+    currentEmoji = "☀️";
     img.setAttribute("src", "img/tarsila-doamaral.jpg");
     textElement.innerHTML = `<div> Tarsila do Amaral, <i>Abaporu</i>, 1928 </br>© Tarsila do Amaral </div>`;
   }
 
   if (emojiElement === "02d") {
-    currentEmojiElement.innerHTML = "🌤";
+    currentEmoji = "🌤";
     img.setAttribute("src", "img/swynnerton-landscape.jpg");
     textElement.innerHTML = `<div>Annie Louisa Swynnerton, <i>Italian Landscape</i>, 1920 </br>© Manchester Art Gallery </div>`;
   }
 
   if (emojiElement === "03d") {
-    currentEmojiElement.innerHTML = "🌥";
+    currentEmoji = "🌥";
     img.setAttribute("src", "img/etel-adnan.jpg");
     textElement.innerHTML = `<div>Etel Adnan, <i>Untitled</i>, 2010</br>© Rémi Villaggi / Mudam Luxembourg</div>`;
   }
 
   if (emojiElement === "04d") {
-    currentEmojiElement.innerHTML = " ☁️";
+    currentEmoji = " ☁️";
     img.setAttribute("src", "img/georgia-okeefe-clouds.jpg");
     textElement.innerHTML = `<div> Georgia O’Keeffe, <i>Sky Above Clouds IV</i>, 1965</div>`;
   }
   if (emojiElement === "09d") {
-    currentEmojiElement.innerHTML = "🌧";
+    currentEmoji = "🌧";
     img.setAttribute("src", "img/vangogh-rain.jpg");
     textElement.innerHTML = `<div>Vincent Van Gogh, <i>Auvers in the Rain</i>, 1890</div>`;
   }
   if (emojiElement === "10d") {
-    currentEmojiElement.innerHTML = "🌦";
+    currentEmoji = "🌦";
     img.setAttribute("src", "img/munch-lecri.jpg");
     textElement.innerHTML = `<div>Edvard Munch, <i>Le Cri</i>, 1893 </br>© National Gallery of Norway</div>`;
   }
   if (emojiElement === "11d") {
-    currentEmojiElement.innerHTML = "🌩";
+    currentEmoji = "🌩";
     img.setAttribute("src", "img/william-turner.jpg");
     textElement.innerHTML = `<div>William Turner, <i>Fishermen at Sea</i>, 1796</div>`;
   }
   if (emojiElement === "13d") {
-    currentEmojiElement.innerHTML = "❄️";
+    currentEmoji = "❄️";
     img.setAttribute("src", "img/monet-snow.jpg");
     textElement.innerHTML = `<div>Claude Monet, <i>Wheatstacks, Snow Effect, Morning</i>, 1891</div>`;
   }
   if (emojiElement === "50d") {
-    currentEmojiElement.innerHTML = "🌫";
+    currentEmoji = "🌫";
     img.setAttribute("src", "img/friedrich-seafog.jpg");
     textElement.innerHTML = `<div>Caspar David Friedrich, </br><i>Wanderer above the Sea of Fog</i>, 1818</div>`;
   }
@@ -179,6 +179,7 @@ function displayForecast(response) {
     if (index > 0 && index < 6) {
       let currentEmojiElement = document.querySelector(".forecast-emoji");
       let emojiElement = forecastDay.weather[0].icon;
+
       if (emojiElement === "01d") {
         currentEmojiElement = "☀️";
       }
