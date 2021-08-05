@@ -2,8 +2,9 @@ body {
   background-color: transparent;
   font-family: "Spartan", sans-serif;
   font-size: 10px;
-  padding-top: none;
+  padding-top: 10px;
   margin: none;
+  size: 100%;
 }
 h1 {
   background-color: none;
@@ -34,37 +35,28 @@ hr {
   border: solid 1px #ff8200;
   margin-bottom: 2px;
 }
-footer {
-  background-color: transparent;
-  max-block-size: 30px;
-  font-size: 12px;
-  margin: 0;
-  text-decoration: none;
-  text-align: center;
-}
 
 .container-frame {
-  padding: 5% 10%;
+  align-items: center;
   background-image: url(../img/framing.png);
   background-repeat: no-repeat;
-  background-position: top center;
-  background-size: 70%;
+  background-position: center;
   background-attachment: fixed;
-  background-size: 814px 492px;
-  display: flex;
-  align-items: center;
+  background-size: 100%;
   justify-content: center;
+  margin-top: 30px;
+  size: cover;
 }
 .container {
-  display: flex;
   align-items: center;
+  background-color: #ffff;
+  display: flex;
   justify-content: center;
-  border-radius: 5px;
-  margin-top: 0;
-  padding-top: 0;
-  max-width: 675px;
+  margin-top: 30px;
+  padding-top: 5px;
+  max-width: 875px;
   min-width: 675px;
-  min-height: 379px;
+  min-height: 300px;
 }
 
 h1,
@@ -79,6 +71,7 @@ h1,
 .forecast {
   text-align: center;
 }
+
 .daypart,
 .current-temperature,
 .maximum-temp,
@@ -86,6 +79,8 @@ h1,
   font-family: "Spartan", sans-serif;
   font-size: smaller;
   color: black;
+  margin-top: 3px;
+  margin-bottom: 3px;
 }
 
 .min-temp,
@@ -94,11 +89,7 @@ h1,
   font-size: 12px;
 }
 
-.forecast-emoji-day1,
-.forecast-emoji-day2,
-.forecast-emoji-day3,
-.forecast-emoji-day4,
-.forecast-emoji-day5 {
+.forecast-emoji {
   font-size: 40px;
 }
 
@@ -117,14 +108,17 @@ a:hover {
 .row {
   margin-top: 4px;
   margin-bottom: 4px;
+  text-align: center;
 }
 .btn {
   background-color: #ff8200;
   border: solid 1px #ff8200;
+  border-radius: 5px;
   box-shadow: 5px 5px 4px #eeeeee;
   font-size: 10px;
   margin-bottom: 0;
   transition: all 200ms ease-in-out;
+  text-align: center;
 }
 .btn:hover {
   border: solid 1px #ff8200;
@@ -137,6 +131,9 @@ a:hover {
 #searchemoji {
   font-size: 20px;
   text-align: right;
+}
+.daypart {
+  font-size: 12px;
 }
 .card {
   border: none;
@@ -169,6 +166,7 @@ a:hover {
 .col-6 {
   padding-top: 5px;
 }
+
 .col-9 {
   padding: 0px 30px;
 }
@@ -180,4 +178,8 @@ a:hover {
 }
 .forecast-day {
   font-size: 16px;
+}
+.footer {
+  display: block;
+  background-color: transparent;
 }
