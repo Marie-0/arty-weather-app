@@ -35,6 +35,9 @@ hr {
   border: solid 1px #ff8200;
   margin-bottom: 2px;
 }
+img {
+  max-height: 210px;
+}
 
 .container-frame {
   align-items: center;
